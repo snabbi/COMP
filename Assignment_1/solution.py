@@ -51,9 +51,9 @@ def _get_maxLoc_loop(frame) -> tuple:
 
 def main():
     frames = 0
-    N = 10
-    vid = cv2.VideoCapture(0)
-    #vid = cv2.VideoCapture('http://10.0.20.20:8080/video')
+    N = 20
+    #vid = cv2.VideoCapture(0)
+    vid = cv2.VideoCapture('http://10.0.20.20:8080/video')
     start = time()
     while True:
         if frames == N:

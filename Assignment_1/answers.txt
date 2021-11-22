@@ -1,0 +1,6 @@
+1. standard frame rate is 30 fps. Processing one frame takes 1/30 of a second which is 0.033s
+2. The fps doesn't drop noticeably.
+3. When commenting out the code that shows the frame, the fps doesn't change
+4. It's a lot worse. When using the brightest spot method, the frame rate is 9fps. When using "reddest" spot method, the frame rate is 2. Not viable
+5. There's some latency but not a lot. When flicking my finger, the camera is slighly lagging.
+6. Slightly more latency than the webcam video. I suspect it's due to the fact that each frame needs to get through more channels than the webcam frames.
