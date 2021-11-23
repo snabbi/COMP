@@ -53,7 +53,7 @@ def main():
     frames = 0
     N = 20
     #vid = cv2.VideoCapture(0)
-    vid = cv2.VideoCapture('http://10.0.20.20:8080/video')
+    vid = cv2.VideoCapture('http://10.128.110.35:8080/video')
     start = time()
     while True:
         if frames == N:
