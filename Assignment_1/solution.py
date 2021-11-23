@@ -3,7 +3,6 @@ import numpy as np
 from time import time
 
 ########## Brightest spot methods
-
 def show_brightest_spot(frame):
     maxLoc = _get_brightest_spot(frame)
     cv2.circle(frame, maxLoc, 10, (255,0,0), 2)
@@ -26,6 +25,7 @@ def show_reddest_spot_loop(frame):
     maxLoc = _get_maxLoc_loop(output[:,:,2])
     cv2.circle(frame,maxLoc,10,(0,255,0),2)
 
+######### Help functions
 def _create_mask(frame,lower,upper):
     return cv2.inRange(frame,lower,upper)
 
