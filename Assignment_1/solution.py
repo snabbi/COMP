@@ -15,20 +15,19 @@ def show_brightest_spot_loop(frame):
 
 ######### "Reddest" spot methods
 def show_reddest_spot(frame):
-    lower = np.array([30,30,100],dtype="uint8")
-    upper = np.array([70,70,250],dtype="uint8")
-    mask = cv2.inRange(frame,lower,upper)
+    mask = _create_mask(frame,np.array([30,30,100],dtype="uint8"), np.array([70,70,250],dtype="uint8"))
     output = cv2.bitwise_and(frame,frame,mask=mask)
     (_, _, _, maxLoc) = cv2.minMaxLoc(output[:,:,2])
     cv2.circle(frame,maxLoc,10,(0,255,0),2)
 
 def show_reddest_spot_loop(frame):
-    lower = np.array([30,30,100],dtype="uint8")
-    upper = np.array([70,70,250],dtype="uint8")
-    mask = cv2.inRange(frame,lower,upper)
+    mask = _create_mask(frame,np.array([30,30,100],dtype="uint8"), np.array([70,70,250],dtype="uint8"))
     output = cv2.bitwise_and(frame,frame,mask=mask)
     maxLoc = _get_maxLoc_loop(output[:,:,2])
     cv2.circle(frame,maxLoc,10,(0,255,0),2)
+
+def _create_mask(frame,lower,upper):
+    return cv2.inRange(frame,lower,upper)
 
 def _get_brightest_spot(frame):
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
@@ -52,8 +51,8 @@ def _get_maxLoc_loop(frame) -> tuple:
 def main():
     frames = 0
     N = 20
-    #vid = cv2.VideoCapture(0)
-    vid = cv2.VideoCapture('http://10.128.110.35:8080/video')
+    vid = cv2.VideoCapture(0)
+    #vid = cv2.VideoCapture('http://10.128.110.35:8080/video')
     start = time()
     while True:
         if frames == N:
@@ -63,7 +62,7 @@ def main():
         ret,frame = vid.read()
         
         #show_brightest_spot(frame)
-        #show_reddest_spot(frame)
+        show_reddest_spot(frame)
 
         #show_brightest_spot_loop(frame)
         #show_reddest_spot_loop(frame)
