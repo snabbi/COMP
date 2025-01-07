@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 from time import time
 import matplotlib.pyplot as plt
+import cv2
+
 
 ########## Brightest spot methods
 def show_brightest_spot(frame):
