@@ -4,3 +4,4 @@
 4. It's a lot worse. When using the brightest spot method, the frame rate is 9fps. When using "reddest" spot method, the frame rate is 2. Not viable
 5. There's some latency but not a lot. When flicking my finger, the camera is slighly lagging.
 6. Slightly more latency than the webcam video. I suspect it's due to the fact that each frame needs to get through more channels than the webcam frames.
+this is an edit
